@@ -1,12 +1,41 @@
 import React from 'react';
-import tenis from '../../assets/tenis.jpg';
 import { connect } from 'react-redux';
 import { BsDashCircle, BsPlusCircle } from 'react-icons/bs';
 import { FaTrashAlt } from 'react-icons/fa';
 
 import { Container, Table, Footer } from './styles';
 
-function Cart({ cart }) {
+function Cart({ dispatch ,cart }) {
+
+  const decrement = (product) => {
+    const amount = product.amount - 1;
+
+    dispatch({
+      type: 'UPDATE_AMOUNT',
+      id: product.id,
+      amount: amount
+    })
+  }
+
+  const increment = (product) => {
+    const amount = product.amount + 1;
+
+    dispatch({
+      type: 'UPDATE_AMOUNT',
+      id: product.id,
+      amount: amount
+    })
+  }
+
+  const deleteProduct = ( id ) => {
+    dispatch({
+      type: 'DELETE_PRODUCT',
+      id
+    })
+  }
+
+
+
   return(
     <Container>
       <Table>
@@ -21,7 +50,7 @@ function Cart({ cart }) {
         </thead>
         <tbody>
           {cart.map(product => (
-            <tr>
+            <tr key={product.id}>
               <td>
                 <img src={product.image} alt={product.title}/>
               </td>
@@ -31,11 +60,11 @@ function Cart({ cart }) {
               </td>
               <td>
                 <div>
-                  <button type="button">
+                  <button type="button" onClick={() => decrement(product)}>
                   <BsDashCircle size={20}/>
                   </button>
                   <input type="number" readOnly value={product.amount} />
-                  <button type="button">
+                  <button type="button" onClick={() => increment(product)}>
                     <BsPlusCircle size={20}/>
                   </button>
                 </div>
@@ -44,7 +73,7 @@ function Cart({ cart }) {
                 <strong> R$ 499,00</strong>
               </td>
               <td>
-                <button type="">
+                <button type="button" onClick={() => deleteProduct(product.id)}>
                   <FaTrashAlt/>
                 </button>
               </td>
