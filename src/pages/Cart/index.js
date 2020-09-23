@@ -34,7 +34,7 @@ function Cart({ cart }) {
                   <button type="button">
                   <BsDashCircle size={20}/>
                   </button>
-                  <input type="number" readOnly value="1" />
+                  <input type="number" readOnly value={product.amount} />
                   <button type="button">
                     <BsPlusCircle size={20}/>
                   </button>
