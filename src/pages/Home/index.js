@@ -1,30 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import shoes from '../../assets/tenis.jpg';
+import api from '../../services/api';
+
 import { Container, ProductList } from './styles';
 
 function Home() {
+
+  const [ products, setProduts ] = useState([]);
+
+  useEffect(() => {
+    api.get('/products').then(response => {
+      setProduts(response.data);
+    })
+  }, [])
+
   return(
     <Container>
       <ProductList>
-        <li>
-          <img src={shoes} alt="" />
-          <strong>Tênis Leve Super Confortável</strong>
-          <span>R$ 399,99</span>
-          <button>Adicionar ao Carrinho</button>
-        </li>
-        <li>
-          <img src={shoes} alt="" />
-          <strong>Tênis Leve Super Confortável</strong>
-          <span>R$ 399,99</span>
-          <button>Adicionar ao Carrinho</button>
-        </li>
-        <li>
-          <img src={shoes} alt="" />
-          <strong>Tênis Leve Super Confortável</strong>
-          <span>R$ 399,99</span>
-          <button>Adicionar ao Carrinho</button>
-        </li>
+        {products.map(product => (
+          <li key={product.id}>
+            <img src={product.image} alt={product.title}/>
+            <strong>{product.title}</strong>
+            <span>R$ {product.price}</span>
+            <button>Adicionar ao Carrinho</button>
+          </li>
+        ))}
       </ProductList>
     </Container>
   )
