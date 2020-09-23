@@ -28,7 +28,7 @@ function Home({ dispatch }) {
           <li key={product.id}>
             <img src={product.image} alt={product.title}/>
             <strong>{product.title}</strong>
-            <span>R$ {product.price}</span>
+            <span>{product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
             <button type="button" onClick={() => handleAddCart(product)}>
               Adicionar ao Carrinho
             </button>

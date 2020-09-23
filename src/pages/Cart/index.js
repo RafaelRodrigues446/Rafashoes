@@ -5,7 +5,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 import { Container, Table, Footer } from './styles';
 
-function Cart({ dispatch ,cart }) {
+function Cart({ dispatch , cart, total }) {
 
   const decrement = (product) => {
     const amount = product.amount - 1;
@@ -34,8 +34,6 @@ function Cart({ dispatch ,cart }) {
     })
   }
 
-
-
   return(
     <Container>
       <Table>
@@ -56,7 +54,7 @@ function Cart({ dispatch ,cart }) {
               </td>
               <td>
                 <strong>{product.title}</strong>
-                <span>R$ {product.price}</span>
+                <span>R$ {product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
               </td>
               <td>
                 <div>
@@ -70,7 +68,7 @@ function Cart({ dispatch ,cart }) {
                 </div>
               </td>
               <td>
-                <strong> R$ 499,00</strong>
+                <strong>{product.subtotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong>
               </td>
               <td>
                 <button type="button" onClick={() => deleteProduct(product.id)}>
@@ -85,7 +83,7 @@ function Cart({ dispatch ,cart }) {
         <button>Finalizar Pedido</button>
         <div>
           <span>Total</span>
-          <strong>R$ 2000,00</strong>
+          <strong>{total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</strong>
         </div>
       </Footer>
     </Container>
@@ -93,7 +91,14 @@ function Cart({ dispatch ,cart }) {
 }
 
 const mapStateToProps = ( state ) => ({
-  cart: state.cart,
+  cart: state.cart.map( product => ({
+    ...product,
+    subtotal: product.price * product.amount
+  })),
+
+  total: state.cart.reduce( (total, product) => {
+    return total + product.price * product.amount
+  }, 0)
 })
 
 export default connect(mapStateToProps)(Cart);
