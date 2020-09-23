@@ -1,11 +1,12 @@
 import React from 'react';
 import tenis from '../../assets/tenis.jpg';
+import { connect } from 'react-redux';
 import { BsDashCircle, BsPlusCircle } from 'react-icons/bs';
 import { FaTrashAlt } from 'react-icons/fa';
 
 import { Container, Table, Footer } from './styles';
 
-function Cart() {
+function Cart({ cart }) {
   return(
     <Container>
       <Table>
@@ -19,34 +20,36 @@ function Cart() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <img src={tenis} alt="imagem" />
-            </td>
-            <td>
-              <strong>Tênis leve super confortável</strong>
-              <span>R$ 499,00</span>
-            </td>
-            <td>
-              <div>
-                <button type="button">
-                <BsDashCircle size={20}/>
+          {cart.map(product => (
+            <tr>
+              <td>
+                <img src={product.image} alt={product.title}/>
+              </td>
+              <td>
+                <strong>{product.title}</strong>
+                <span>R$ {product.price}</span>
+              </td>
+              <td>
+                <div>
+                  <button type="button">
+                  <BsDashCircle size={20}/>
+                  </button>
+                  <input type="number" readOnly value="1" />
+                  <button type="button">
+                    <BsPlusCircle size={20}/>
+                  </button>
+                </div>
+              </td>
+              <td>
+                <strong> R$ 499,00</strong>
+              </td>
+              <td>
+                <button type="">
+                  <FaTrashAlt/>
                 </button>
-                <input type="number" readOnly value="1" />
-                <button type="button">
-                  <BsPlusCircle size={20}/>
-                </button>
-              </div>
-            </td>
-            <td>
-              <strong> R$ 499,00</strong>
-            </td>
-            <td>
-              <button type="">
-                <FaTrashAlt/>
-              </button>
-            </td>
-          </tr>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
       <Footer>
@@ -60,4 +63,8 @@ function Cart() {
   )
 }
 
-export default Cart;
+const mapStateToProps = ( state ) => ({
+  cart: state.cart,
+})
+
+export default connect(mapStateToProps)(Cart);
