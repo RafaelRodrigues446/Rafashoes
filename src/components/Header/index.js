@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import shoes from '../../assets/shoes.svg';
 import { MdShoppingBasket } from 'react-icons/md';
 import { Container, Logo, Cart } from './styles';
 
-function Header() {
+function Header({ cartSize }) {
   return (
     <Container>
       <Logo to="/">
@@ -14,7 +15,7 @@ function Header() {
       <Cart to="/cart">
         <div>
           <strong>Meu Carrinho</strong>
-          <span>3 Itens</span>
+          <span>{cartSize} Itens</span>
         </div>
         <MdShoppingBasket size={35}/>
       </Cart>
@@ -22,4 +23,8 @@ function Header() {
   )
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+  cartSize: state.cart.length
+})
+
+export default connect(mapStateToProps)(Header);

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
+import { connect } from 'react-redux';
 import api from '../../services/api';
 
 import { Container, ProductList } from './styles';
 
-function Home() {
+function Home({ dispatch }) {
 
   const [ products, setProduts ] = useState([]);
 
@@ -14,6 +14,13 @@ function Home() {
     })
   }, [])
 
+  const handleAddCart = product => {
+    dispatch({
+      type: 'ADD_CART',
+      product
+    })
+  }
+
   return(
     <Container>
       <ProductList>
@@ -22,7 +29,9 @@ function Home() {
             <img src={product.image} alt={product.title}/>
             <strong>{product.title}</strong>
             <span>R$ {product.price}</span>
-            <button>Adicionar ao Carrinho</button>
+            <button type="button" onClick={() => handleAddCart(product)}>
+              Adicionar ao Carrinho
+            </button>
           </li>
         ))}
       </ProductList>
@@ -30,4 +39,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default connect()(Home);
