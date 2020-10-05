@@ -1,37 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import * as cartActions from '../../store/modules/cart/actions';
+import { bindActionCreators } from 'redux';
+
 import { BsDashCircle, BsPlusCircle } from 'react-icons/bs';
 import { FaTrashAlt } from 'react-icons/fa';
 
 import { Container, Table, Footer } from './styles';
 
-function Cart({ dispatch , cart, total }) {
+function Cart({ cart, total, deleteProduct, updateAmount }) {
 
-  const decrement = (product) => {
-    const amount = product.amount - 1;
-
-    dispatch({
-      type: 'UPDATE_AMOUNT',
-      id: product.id,
-      amount: amount
-    })
+  const decrement = ( product ) => {
+    updateAmount( product.id, product.amount - 1);
   }
 
-  const increment = (product) => {
-    const amount = product.amount + 1;
-
-    dispatch({
-      type: 'UPDATE_AMOUNT',
-      id: product.id,
-      amount: amount
-    })
-  }
-
-  const deleteProduct = ( id ) => {
-    dispatch({
-      type: 'DELETE_PRODUCT',
-      id
-    })
+  const increment = ( product ) => {
+    updateAmount( product.id, product.amount + 1);
   }
 
   return(
@@ -101,4 +85,8 @@ const mapStateToProps = ( state ) => ({
   }, 0)
 })
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = ( dispatch ) => {
+  return bindActionCreators( cartActions, dispatch )
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( Cart );

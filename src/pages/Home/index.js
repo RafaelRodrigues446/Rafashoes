@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as cartActions from '../../store/modules/cart/actions';
 import api from '../../services/api';
 
 import { Container, ProductList } from './styles';
 
-function Home({ dispatch }) {
+function Home({ addCart }) {
 
   const [ products, setProduts ] = useState([]);
 
@@ -14,13 +17,6 @@ function Home({ dispatch }) {
     })
   }, [])
 
-  const handleAddCart = product => {
-    dispatch({
-      type: 'ADD_CART',
-      product
-    })
-  }
-
   return(
     <Container>
       <ProductList>
@@ -29,7 +25,7 @@ function Home({ dispatch }) {
             <img src={product.image} alt={product.title}/>
             <strong>{product.title}</strong>
             <span>{product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
-            <button type="button" onClick={() => handleAddCart(product)}>
+            <button type="button" onClick={() => addCart(product)}>
               Adicionar ao Carrinho
             </button>
           </li>
@@ -39,4 +35,8 @@ function Home({ dispatch }) {
   )
 }
 
-export default connect()(Home);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators( cartActions, dispatch)
+}
+
+export default connect(null, mapDispatchToProps )(Home);
