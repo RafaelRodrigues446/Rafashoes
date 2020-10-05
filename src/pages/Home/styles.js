@@ -7,6 +7,7 @@ export const Container = styled.div`
 
   display: flex;
   margin: 0px auto;
+
 `;
 
 export const ProductList = styled.ul`
@@ -53,5 +54,9 @@ export const ProductList = styled.ul`
 
       margin-top: auto;
     }
+  }
+
+  @media( max-width: 960px ) {
+    justify-content: center;
   }
 `;

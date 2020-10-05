@@ -4,6 +4,7 @@ export const Container = styled.div`
 
   width: 100%;
   max-width: 940px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -85,5 +86,32 @@ export const Footer = styled.footer`
   div strong {
     font-size: 20px;
     color: #333333;
+  }
+`;
+
+export const CarrinhoVazio = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  h3 {
+    color: #333333;
+  }
+
+  svg {
+    color: #5C4082;
+  }
+
+  a {
+    padding: 15px;
+    border: 0;
+    background: #5C4082;
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: bold;
+
+    margin-top: 15px;
+
   }
 `;

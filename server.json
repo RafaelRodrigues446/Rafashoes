@@ -28,58 +28,39 @@
   "products": [
     {
       "id": 1,
-      "title": "Tênis Nike Court Vision LO Masculino - Branco e Azul Royal",
-      "price": 259.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-court-vision-lo-masculino/36/HZM-2136-936/HZM-2136-936_zoom1.jpg?ts=1594137792&"
+      "title": "Tênis de Caminhada Leve Confortável",
+      "price": 179.9,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
     },
     {
       "id": 2,
-      "title": "Tênis Nike Court Lite 2 Masculino - Branco e Preto",
-      "price": 229.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-court-lite-2-masculino/28/HZM-1864-028/HZM-1864-028_zoom1.jpg?ts=1572007544&"
+      "title": "Tênis VR Caminhada Confortável Detalhes Couro Masculino",
+      "price": 139.9,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg"
     },
     {
       "id": 3,
-      "title": "Tênis Nike Renew Lucent 2 Masculino - Branco e Preto",
-      "price": 329.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-renew-lucent-2-masculino/28/HZM-4215-028/HZM-4215-028_zoom2.jpg?ts=1594137488&?ims=544xhttps://static.netshoes.com.br/produtos/tenis-nike-renew-lucent-2-masculino/28/HZM-4215-028/HZM-4215-028_zoom2.jpg?ts=1594137488&?ims=1088x"
+      "title": "Tênis Adidas Duramo Lite 2.0",
+      "price": 219.9,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
     },
     {
       "id": 4,
-      "title": "Tênis Nike Renew Run Feminino - Branco e Azul",
-      "price": 299.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-renew-run-feminino/44/HZM-2893-044/HZM-2893-044_zoom5.jpg?ts=1584659793&?ims=544xhttps://static.netshoes.com.br/produtos/tenis-nike-renew-run-feminino/44/HZM-2893-044/HZM-2893-044_zoom5.jpg?ts=1584659793&?ims=1088x"
+      "title": "Tênis VR Caminhada Confortável Detalhes Couro Masculino",
+      "price": 139.9,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg"
     },
     {
       "id": 5,
-      "title": "Tênis Nike Revolution 5 Feminino - Preto e Grafite",
-      "price": 249.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-revolution-5-feminino/04/HZM-1729-304/HZM-1729-304_zoom5.jpg?ts=1584657892&?ims=544xhttps://static.netshoes.com.br/produtos/tenis-nike-revolution-5-feminino/04/HZM-1729-304/HZM-1729-304_zoom5.jpg?ts=1584657892&?ims=1088x"
+      "title": "Tênis Adidas Duramo Lite 2.0",
+      "price": 219.9,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
     },
     {
       "id": 6,
-      "title": "Tênis Nike Quest 2 Feminino - Preto e Branco",
-      "price": 249.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-quest-2-feminino/26/HZM-1750-026/HZM-1750-026_zoom1.jpg?ts=1573241467&"
-
-    },
-    {
-      "id": 7,
-      "title": "Tênis Nike Air Max Alpha Trainer 2 Masculino - Preto e Chumbo",
-      "price": 329.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-air-max-alpha-trainer-2-masculino/93/HZM-1573-793/HZM-1573-793_zoom5.jpg?ts=1584660512&?ims=544xhttps://static.netshoes.com.br/produtos/tenis-nike-air-max-alpha-trainer-2-masculino/93/HZM-1573-793/HZM-1573-793_zoom5.jpg?ts=1584660512&?ims=1088x"
-    },
-    {
-      "id": 8,
-      "title": "Tênis Nike Renew Elevate - Branco e Preto",
-      "price": 399.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-renew-elevate/28/HZM-4098-028/HZM-4098-028_zoom2.jpg?ts=1592995403&?ims=544xhttps://static.netshoes.com.br/produtos/tenis-nike-renew-elevate/28/HZM-4098-028/HZM-4098-028_zoom2.jpg?ts=1592995403&?ims=1088x"
-    },
-    {
-      "id": 9,
-      "title": "Tênis Nike Court Vision Low Prem Masculino - Branco e Preto",
-      "price": 289.9,
-      "image": "https://static.netshoes.com.br/produtos/tenis-nike-court-vision-low-prem-masculino/28/HZM-4218-028/HZM-4218-028_zoom2.jpg?ts=1594137529&?ims=544xhttps://static.netshoes.com.br/produtos/tenis-nike-court-vision-low-prem-masculino/28/HZM-4218-028/HZM-4218-028_zoom2.jpg?ts=1594137529&?ims=1088x"
+      "title": "Tênis de Caminhada Leve Confortável",
+      "price": 179.9,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
     }
   ]
 }

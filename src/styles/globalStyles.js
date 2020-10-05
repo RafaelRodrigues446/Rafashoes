@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     background-image: url(${background});
     background-position: top center;
     background-repeat: no-repeat;
-    background-color: #eeeeee;
+    background-color: orange;
     padding-bottom: 50px;
   }
 

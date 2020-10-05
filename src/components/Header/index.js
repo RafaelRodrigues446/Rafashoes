@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import shoes from '../../assets/shoes.svg';
-import { MdShoppingBasket } from 'react-icons/md';
+import { MdShoppingCart } from 'react-icons/md';
 import { Container, Logo, Cart } from './styles';
 
 function Header({ cartSize }) {
@@ -17,7 +17,8 @@ function Header({ cartSize }) {
           <strong>Meu Carrinho</strong>
           <span>{cartSize} Itens</span>
         </div>
-        <MdShoppingBasket size={35}/>
+        <MdShoppingCart size={35}/>
+        <span>{cartSize}</span>
       </Cart>
     </Container>
   )
